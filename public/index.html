@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIRA - College Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="chat-header">
+            <div class="header-content">
+                <div class="bot-avatar">A</div>
+                <div class="header-text">
+                    <h1>AIRA</h1>
+                    <p>College Information Assistant</p>
+                </div>
+            </div>
+            <div class="status-indicator">
+                <span class="status-dot"></span>
+                Online
+            </div>
+        </header>
+
+        <main class="chat-container">
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot-message">
+                    <div class="message-avatar">A</div>
+                    <div class="message-content">
+                        <p>Hello! I'm AIRA, your college information assistant. How can I help you today?</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="quick-replies">
+                <button class="quick-reply-btn" data-question="What are the admission requirements?">Admissions</button>
+                <button class="quick-reply-btn" data-question="What courses are offered?">Courses</button>
+                <button class="quick-reply-btn" data-question="What is the college contact number?">Contact</button>
+                <button class="quick-reply-btn" data-question="What are the fee details?">Fees</button>
+            </div>
+
+            <div class="chat-input-container">
+                <div class="input-group">
+                    <input type="text" id="userInput" placeholder="Type your question here..." maxlength="500">
+                    <button id="sendButton">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
