@@ -26,6 +26,7 @@ body {
     overflow: hidden;
 }
 
+/* ===== Header Section ===== */
 .chat-header {
     background: linear-gradient(135deg, #2c3e50, #34495e);
     color: white;
@@ -86,13 +87,16 @@ body {
     100% { opacity: 1; }
 }
 
+/* ===== Chat Container ===== */
 .chat-container {
     flex: 1;
     display: flex;
     flex-direction: column;
     padding: 20px;
+    overflow: hidden; /* Prevents double scrollbars */
 }
 
+/* ===== Scrollable Chat Messages ===== */
 .chat-messages {
     flex: 1;
     overflow-y: auto;
@@ -103,8 +107,11 @@ body {
     display: flex;
     flex-direction: column;
     gap: 15px;
+    scroll-behavior: smooth;
+    max-height: 100%;
 }
 
+/* ===== Message Bubbles ===== */
 .message {
     display: flex;
     gap: 12px;
@@ -160,6 +167,7 @@ body {
     border: 1px solid #e9ecef;
 }
 
+/* ===== Quick Reply Buttons ===== */
 .quick-replies {
     display: flex;
     gap: 10px;
@@ -186,6 +194,7 @@ body {
     transform: translateY(-2px);
 }
 
+/* ===== Chat Input Section ===== */
 .chat-input-container {
     background: white;
     padding: 20px;
@@ -238,44 +247,44 @@ body {
     transform: none;
 }
 
-/* Scrollbar styling */
+/* ===== Custom Scrollbar ===== */
 .chat-messages::-webkit-scrollbar {
-    width: 6px;
+    width: 8px;
 }
 
 .chat-messages::-webkit-scrollbar-track {
     background: #f1f1f1;
-    border-radius: 3px;
+    border-radius: 4px;
 }
 
 .chat-messages::-webkit-scrollbar-thumb {
     background: #c1c1c1;
-    border-radius: 3px;
+    border-radius: 4px;
 }
 
 .chat-messages::-webkit-scrollbar-thumb:hover {
-    background: #a8a8a8;
+    background: #888;
 }
 
-/* Responsive design */
+/* ===== Responsive Design ===== */
 @media (max-width: 768px) {
     .container {
         height: 95vh;
         border-radius: 15px;
     }
-    
+
     .chat-header {
         padding: 15px 20px;
     }
-    
+
     .message {
         max-width: 90%;
     }
-    
+
     .quick-replies {
         justify-content: center;
     }
-    
+
     .quick-reply-btn {
         font-size: 12px;
         padding: 8px 12px;
