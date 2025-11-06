@@ -56,7 +56,7 @@ INSERT INTO faqs (question, answer) VALUES
 'You can contact the college through the official email: admissions@acharya.ac.in'),
 
 ('What are the college timings?',
-'The college timings are from 8:45 AM to 4:30 PM, with a 1-hour lunch break included.'),
+'The college timings are from 8:45 AM to 4:30 PM, with a 1-hour lunch break included.');
 
 
 -- Create index for better search performance

@@ -1,12 +1,13 @@
 class AIRAChatbot {
     constructor() {
-        this.chatMessages = document.getElementById('chatMessages');
-        this.userInput = document.getElementById('userInput');
-        this.sendButton = document.getElementById('sendButton');
-        this.quickReplyButtons = document.querySelectorAll('.quick-reply-btn');
-        
-        this.initializeEventListeners();
-    }
+    this.chatMessages = document.getElementById('chatMessages');
+    this.userInput = document.getElementById('userInput');
+    this.sendButton = document.getElementById('sendButton');
+    this.quickReplyButtons = document.querySelectorAll('.quick-reply-btn');
+    this.botAvatarPath = 'assets/Chatbot-logo.png';  // ✅ universal fix
+    this.initializeEventListeners();
+}
+
     
     initializeEventListeners() {
         // Send button click event
@@ -76,54 +77,74 @@ class AIRAChatbot {
     }
     
     addMessage(content, sender) {
-        const messageDiv = document.createElement('div');
-        messageDiv.className = `message ${sender}-message`;
-        
-        const avatarDiv = document.createElement('div');
-        avatarDiv.className = 'message-avatar';
-        avatarDiv.textContent = sender === 'user' ? 'Y' : 'A';
-        
-        const contentDiv = document.createElement('div');
-        contentDiv.className = 'message-content';
-        
-        const contentParagraph = document.createElement('p');
-        contentParagraph.textContent = content;
-        
-        contentDiv.appendChild(contentParagraph);
-        messageDiv.appendChild(avatarDiv);
-        messageDiv.appendChild(contentDiv);
-        
-        this.chatMessages.appendChild(messageDiv);
-        
-        // Scroll to bottom
-        this.scrollToBottom();
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${sender}-message`;
+    
+    const avatarDiv = document.createElement('div');
+    avatarDiv.className = 'message-avatar';
+
+    // ✅ If it's bot, use logo image
+    if (sender === 'bot') {
+    const img = document.createElement('img');
+    img.src = this.botAvatarPath;
+    img.alt = 'AIRA Logo';
+    img.className = 'bot-avatar-img';
+    avatarDiv.appendChild(img);
+}
+ 
+    // ✅ If it's user, show Y
+    else {
+        avatarDiv.textContent = 'Y';
     }
+
+    const contentDiv = document.createElement('div');
+    contentDiv.className = 'message-content';
+
+    const contentParagraph = document.createElement('p');
+    contentParagraph.textContent = content;
+
+    contentDiv.appendChild(contentParagraph);
+    messageDiv.appendChild(avatarDiv);
+    messageDiv.appendChild(contentDiv);
+
+    this.chatMessages.appendChild(messageDiv);
+    this.scrollToBottom();
+    }
+
+
     
     showTypingIndicator() {
-        const typingDiv = document.createElement('div');
-        typingDiv.className = 'message bot-message';
-        typingDiv.id = 'typing-indicator';
-        
-        const avatarDiv = document.createElement('div');
-        avatarDiv.className = 'message-avatar';
-        avatarDiv.textContent = 'A';
-        
-        const contentDiv = document.createElement('div');
-        contentDiv.className = 'message-content';
-        contentDiv.innerHTML = `
-            <div class="typing-dots">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        `;
-        
-        typingDiv.appendChild(avatarDiv);
-        typingDiv.appendChild(contentDiv);
-        this.chatMessages.appendChild(typingDiv);
-        
-        this.scrollToBottom();
-    }
+    const typingDiv = document.createElement('div');
+    typingDiv.className = 'message bot-message';
+    typingDiv.id = 'typing-indicator';
+    
+    const avatarDiv = document.createElement('div');
+    avatarDiv.className = 'message-avatar';
+
+    // ✅ Use the same chatbot image instead of text “A”
+    const img = document.createElement('img');
+    img.src = this.botAvatarPath; // ✅ Leading slash is very important
+    img.alt = 'AIRA Logo';
+    img.className = 'bot-avatar-img';
+    avatarDiv.appendChild(img);
+
+    const contentDiv = document.createElement('div');
+    contentDiv.className = 'message-content';
+    contentDiv.innerHTML = `
+        <div class="typing-dots">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    `;
+    
+    typingDiv.appendChild(avatarDiv);
+    typingDiv.appendChild(contentDiv);
+    this.chatMessages.appendChild(typingDiv);
+    
+    this.scrollToBottom();
+}
+
     
     removeTypingIndicator() {
         const typingIndicator = document.getElementById('typing-indicator');
