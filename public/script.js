@@ -14,7 +14,7 @@ class AIRAChatbot {
         
         // Enter key press event
         this.userInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter' && !e.shiftKey) {
+            if (e.key === 'Enter' && !e.shiftKjey) {
                 e.preventDefault();
                 this.sendMessage();
             }

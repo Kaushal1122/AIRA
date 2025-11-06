@@ -1,27 +1,4 @@
 {
-<<<<<<< HEAD
-  "name": "aira-college-chatbot",
-  "version": "1.0.0",
-  "description": "A college FAQ chatbot for students",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js",
-    "dev": "node server.js"
-  },
-  "dependencies": {
-    "body-parser": "^1.20.2",
-    "cors": "^2.8.5",
-    "express": "^4.18.2",
-    "mysql2": "^3.15.3"
-  },
-  "keywords": [
-    "chatbot",
-    "college",
-    "faq"
-  ],
-  "author": "College Team",
-  "license": "MIT"
-=======
   "name": "aira",
   "version": "1.0.0",
   "description": "��#\u0000 \u0000A\u0000I\u0000R\u0000A\u0000\r\u0000 \u0000",
@@ -39,5 +16,4 @@
     "mysql": "^2.18.1",
     "mysql2": "^3.15.3"
   }
->>>>>>> eb527f6b99fac0be7a026ab4228921c52baecd63
 }
