@@ -1,4 +1,4 @@
-# AIRA - College Chatbot 
+# AIRA - College Chatbot
 
 A web-based FAQ chatbot for college students to get instant answers to common queries.
 
